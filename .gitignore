@@ -1,0 +1,27 @@
+# Java
+target/
+*.class
+*.jar
+*.war
+
+# Maven
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Node
+node_modules/
+.next/
+out/
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db

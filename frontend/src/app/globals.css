@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #4f6ef7;
+  --color-surface: #0f1117;
+  --color-card: #161b27;
+  --color-border: #1e2535;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--color-surface); color: white; }
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary:hover { background: #3a57e8; transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: #94a3b8;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+.btn-ghost:hover { background: var(--color-card); color: white; }
+
+input, select, textarea {
+  background: #1e2535;
+  border: 1px solid #2d3748;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 14px;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+input::placeholder { color: #4a5568; }
+select option { background: #1e2535; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 3px; }
