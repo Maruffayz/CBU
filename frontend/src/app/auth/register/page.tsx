@@ -17,7 +17,13 @@ export default function RegisterPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await authApi.register(form);
+      const payload = {
+        email: form.email,
+        username: form.fullName,
+        password: form.password,
+        currency: form.currency,
+      };
+      const res = await authApi.register(payload);
       setUser(res.data);
       toast.success('Account created!');
       router.push('/dashboard');

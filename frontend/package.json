@@ -17,7 +17,9 @@
     "react-hook-form": "^7.48.2",
     "date-fns": "^3.0.6",
     "lucide-react": "^0.303.0",
-    "clsx": "^2.0.0"
+    "clsx": "^2.0.0",
+    "react-hot-toast": "^2.4.1",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "typescript": "^5",

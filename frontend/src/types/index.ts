@@ -2,6 +2,7 @@ export interface User {
   userId: string;
   email: string;
   username: string;
+  fullName?: string;
   currency: string;
   token: string;
 }
