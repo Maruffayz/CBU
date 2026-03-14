@@ -73,6 +73,11 @@ const SetupStep0 = (props: Props) => {
               label="Português (pt-PT)"
             />
             <FormControlLabel value="en" control={<Radio />} label="English" />
+            <FormControlLabel
+              value="uz"
+              control={<Radio />}
+              label="O'zbek (uz-UZ)"
+            />
           </RadioGroup>
         </FormControl>
         <Typography variant="h5" pt={theme.spacing(4)}>

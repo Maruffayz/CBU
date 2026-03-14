@@ -109,6 +109,11 @@ const Profile = () => {
                     control={<Radio />}
                     label="English"
                   />
+                  <FormControlLabel
+                    value="uz"
+                    control={<Radio />}
+                    label="O'zbek (uz-UZ)"
+                  />
                 </RadioGroup>
               </FormControl>
             </AccordionDetails>

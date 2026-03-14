@@ -63,6 +63,11 @@ const MyFinThemeProvider = ({ children }: { children: ReactNode }) => {
         setYupLocale(pt);
         setDayJsLocale('pt');
         break;
+      case 'uz':
+        setLocale('enUS');
+        setYupLocale(en);
+        setDayJsLocale('en');
+        break;
       default:
         setLocale('enUS');
         setYupLocale(en);
