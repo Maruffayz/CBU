@@ -3,22 +3,24 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/context/LanguageContext';
 
 const navItems = [
-  { href: '/dashboard', icon: '📊', label: 'Dashboard' },
-  { href: '/accounts', icon: '💳', label: 'Accounts' },
-  { href: '/transactions', icon: '📋', label: 'Transactions' },
-  { href: '/transfers', icon: '🔄', label: 'Transfers' },
-  { href: '/debts', icon: '📑', label: 'Debts' },
-  { href: '/budgets', icon: '🎯', label: 'Budgets' },
-  { href: '/analytics', icon: '📈', label: 'Analytics' },
-  { href: '/calendar', icon: '📅', label: 'Calendar' },
+  { href: '/dashboard', icon: '📊', key: 'nav.dashboard' },
+  { href: '/accounts', icon: '💳', key: 'nav.accounts' },
+  { href: '/transactions', icon: '📋', key: 'nav.transactions' },
+  { href: '/transfers', icon: '🔄', key: 'nav.transfers' },
+  { href: '/debts', icon: '📑', key: 'nav.debts' },
+  { href: '/budgets', icon: '🎯', key: 'nav.budgets' },
+  { href: '/analytics', icon: '📈', key: 'nav.analytics' },
+  { href: '/calendar', icon: '📅', key: 'nav.calendar' },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
   const router = useRouter();
+  const { language, setLanguage, t } = useLanguage();
 
   const handleLogout = () => { logout(); router.push('/login'); };
 
@@ -45,13 +47,25 @@ export default function Sidebar() {
             }`}
             style={pathname === item.href ? {background:'rgba(79,110,247,0.15)', color:'#7b96fa'} : {}}>
             <span className="text-lg">{item.icon}</span>
-            {item.label}
+            {t(item.key)}
           </Link>
         ))}
       </nav>
-      <div className="p-4 border-t" style={{borderColor:'#1e2535'}}>
+      <div className="p-4 border-t space-y-3" style={{borderColor:'#1e2535'}}>
+        <div>
+          <label className="block text-xs text-slate-500 mb-1">{t('lang.label')}</label>
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value as any)}
+            className="w-full bg-[#050816] border border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-300"
+          >
+            <option value="en">{t('lang.english')}</option>
+            <option value="uz">{t('lang.uzbek')}</option>
+            <option value="ru">{t('lang.russian')}</option>
+          </select>
+        </div>
         <button onClick={handleLogout} className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-slate-400 hover:text-red-400 transition-colors">
-          <span>🚪</span> Sign out
+          <span>🚪</span> {t('nav.signOut')}
         </button>
       </div>
     </aside>

@@ -2,26 +2,28 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuthStore } from '@/hooks/useAuth';
+import { useLanguage } from '@/context/LanguageContext';
 import {
   LayoutDashboard, CreditCard, ArrowUpDown, ArrowLeftRight,
   Users, Target, BarChart3, Calendar, LogOut, TrendingUp
 } from 'lucide-react';
 
 const navItems = [
-  { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { href: '/accounts', icon: CreditCard, label: 'Accounts' },
-  { href: '/transactions', icon: ArrowUpDown, label: 'Transactions' },
-  { href: '/transfers', icon: ArrowLeftRight, label: 'Transfers' },
-  { href: '/debts', icon: Users, label: 'Debts' },
-  { href: '/budgets', icon: Target, label: 'Budgets' },
-  { href: '/analytics', icon: BarChart3, label: 'Analytics' },
-  { href: '/calendar', icon: Calendar, label: 'Calendar' },
+  { href: '/dashboard', icon: LayoutDashboard, key: 'nav.dashboard' },
+  { href: '/accounts', icon: CreditCard, key: 'nav.accounts' },
+  { href: '/transactions', icon: ArrowUpDown, key: 'nav.transactions' },
+  { href: '/transfers', icon: ArrowLeftRight, key: 'nav.transfers' },
+  { href: '/debts', icon: Users, key: 'nav.debts' },
+  { href: '/budgets', icon: Target, key: 'nav.budgets' },
+  { href: '/analytics', icon: BarChart3, key: 'nav.analytics' },
+  { href: '/calendar', icon: Calendar, key: 'nav.calendar' },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const { user, logout } = useAuthStore();
+  const { language, setLanguage, t } = useLanguage();
 
   const handleLogout = () => {
     logout();
@@ -48,16 +50,16 @@ export default function Sidebar() {
 
       {/* Nav */}
       <nav style={{ display: 'flex', flexDirection: 'column', gap: 2, flex: 1 }}>
-        {navItems.map(({ href, icon: Icon, label }) => (
+        {navItems.map(({ href, icon: Icon, key }) => (
           <Link key={href} href={href}
             className={`nav-item ${pathname === href || pathname.startsWith(href + '/') ? 'active' : ''}`}>
             <Icon size={17} />
-            {label}
+            {t(key)}
           </Link>
         ))}
       </nav>
 
-      {/* User section */}
+      {/* User section + language */}
       <div style={{ borderTop: '1px solid var(--border)', paddingTop: 16 }}>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 10,
@@ -69,14 +71,32 @@ export default function Sidebar() {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: 13, fontWeight: 700, color: 'white',
           }}>
-            {user?.fullName?.[0] || 'U'}
+            {(user?.username || 'U').charAt(0).toUpperCase()}
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 13, fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              {user?.fullName || 'User'}
+              {user?.username || 'User'}
             </div>
             <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>{user?.currency}</div>
           </div>
+        </div>
+        <div style={{ marginBottom: 8 }}>
+          <label style={{ display: 'block', fontSize: 11, color: 'var(--text-muted)', marginBottom: 4 }}>
+            {t('lang.label')}
+          </label>
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value as any)}
+            style={{
+              width: '100%', borderRadius: 8, padding: '6px 10px',
+              background: 'var(--bg-elevated)', color: 'var(--text-muted)',
+              border: '1px solid var(--border)', fontSize: 12,
+            }}
+          >
+            <option value="en">{t('lang.english')}</option>
+            <option value="uz">{t('lang.uzbek')}</option>
+            <option value="ru">{t('lang.russian')}</option>
+          </select>
         </div>
         <button onClick={handleLogout}
           style={{
@@ -88,7 +108,7 @@ export default function Sidebar() {
           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(239,68,68,0.1)'; (e.currentTarget as HTMLElement).style.color = '#f87171'; }}
           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'; }}
         >
-          <LogOut size={16} /> Sign Out
+          <LogOut size={16} /> {t('nav.signOut')}
         </button>
       </div>
     </aside>

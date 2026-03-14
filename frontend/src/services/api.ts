@@ -26,6 +26,7 @@ export default api;
 export const authApi = {
   register: (data: any) => api.post('/auth/register', data),
   login: (data: any) => api.post('/auth/login', data),
+  verifyEmail: (data: any) => api.post('/auth/verify', data),
 };
 
 // Accounts

@@ -36,6 +36,7 @@ public class Account {
     @Column(length = 7)
     private String color = "#6366f1";
 
+    @Builder.Default
     @Column(name = "is_active")
     private boolean active = true;
 

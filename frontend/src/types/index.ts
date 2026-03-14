@@ -5,6 +5,7 @@ export interface User {
   fullName?: string;
   currency: string;
   token: string;
+  verified?: boolean;
 }
 
 export interface Account {

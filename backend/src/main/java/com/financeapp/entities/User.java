@@ -31,6 +31,15 @@ public class User implements UserDetails {
     @Column(length = 10)
     private String currency = "USD";
 
+    @Column(name = "email_verified")
+    private boolean emailVerified = false;
+
+    @Column(name = "verification_code", length = 10)
+    private String verificationCode;
+
+    @Column(name = "verification_expires_at")
+    private LocalDateTime verificationExpiresAt;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();
 
