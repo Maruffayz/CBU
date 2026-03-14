@@ -100,11 +100,6 @@ const Profile = () => {
                   onChange={handleLanguageChange}
                 >
                   <FormControlLabel
-                    value="pt"
-                    control={<Radio />}
-                    label="Português (pt-PT)"
-                  />
-                  <FormControlLabel
                     value="en"
                     control={<Radio />}
                     label="English"

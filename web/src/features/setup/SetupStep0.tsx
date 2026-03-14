@@ -67,11 +67,6 @@ const SetupStep0 = (props: Props) => {
             name="radio-buttons-group"
             onChange={handleLanguageChange}
           >
-            <FormControlLabel
-              value="pt"
-              control={<Radio />}
-              label="Português (pt-PT)"
-            />
             <FormControlLabel value="en" control={<Radio />} label="English" />
             <FormControlLabel
               value="uz"
