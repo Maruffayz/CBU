@@ -1,0 +1,122 @@
+{
+  "common": {
+    "language": "Язык",
+    "theme": "Тема",
+    "currency": "Валюта",
+    "date": "Дата",
+    "description": "Описание",
+    "amount": "Сумма",
+    "account": "Счёт",
+    "credit": "Кредит",
+    "debit": "Дебет",
+    "type": "Тип",
+    "externalAccount": "Внешний счёт",
+    "noCategory": "Нет категории",
+    "noEntity": "Нет контрагента",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "save": "Сохранить",
+    "back": "Назад",
+    "next": "Далее"
+  },
+  "sidebar": {
+    "dashboard": "Главная",
+    "transactions": "Транзакции",
+    "accounts": "Счета",
+    "categories": "Категории",
+    "entities": "Контрагенты",
+    "rules": "Правила",
+    "budgets": "Бюджеты",
+    "investments": "Инвестиции",
+    "goals": "Цели",
+    "betaBadge": "Бета",
+    "logoAlt": "Логотип MyFin",
+    "statistics": "Статистика",
+    "tags": "Теги",
+    "meta": "Мета"
+  },
+  "topBar": {
+    "operatingFunds": "Оборотные средства",
+    "investing": "Инвестиции",
+    "debt": "Долг",
+    "netWorth": "Чистый капитал"
+  },
+  "setup": {
+    "step0Label": "Основные настройки",
+    "step1Label": "Пользователь",
+    "step2Label": "Учётные записи",
+    "step3Label": "Готово",
+    "step0Description": "Перед началом выберите язык, тему и валюту."
+  },
+  "profile": {
+    "profileManagement": "Управление профилем",
+    "strapLine": "Просматривайте и обновляйте личные настройки",
+    "changeLanguage": "Изменить язык",
+    "changeLanguageStrapLine": "Выберите язык интерфейса",
+    "changeCurrency": "Изменить валюту",
+    "changeCurrencyStrapline": "Выберите валюту для отображения",
+    "changeTheme": "Изменить тему",
+    "darkTheme": "Тёмная тема",
+    "lightTheme": "Светлая тема",
+    "changeThemeStrapLine": "Настройте внешний вид платформы",
+    "exportDataTitle": "Экспорт данных",
+    "exportDataDescription": "Выгрузите данные пользователя в JSON-файл",
+    "importDataTitle": "Импорт данных",
+    "importDataDescription": "Загрузите ранее сохранённый файл с данными"
+  },
+  "monthsLong": {
+    "january": "Январь",
+    "february": "Февраль",
+    "march": "Март",
+    "april": "Апрель",
+    "may": "Май",
+    "june": "Июнь",
+    "july": "Июль",
+    "august": "Август",
+    "september": "Сентябрь",
+    "october": "Октябрь",
+    "november": "Ноябрь",
+    "december": "Декабрь"
+  },
+  "monthsShort": {
+    "jan": "Янв",
+    "feb": "Фев",
+    "mar": "Мар",
+    "apr": "Апр",
+    "may": "Май",
+    "jun": "Июн",
+    "jul": "Июл",
+    "aug": "Авг",
+    "sep": "Сен",
+    "oct": "Окт",
+    "nov": "Ноя",
+    "dec": "Дек"
+  },
+  "weekDaysLong": {
+    "sunday": "Воскресенье",
+    "monday": "Понедельник",
+    "tuesday": "Вторник",
+    "wednesday": "Среда",
+    "thursday": "Четверг",
+    "friday": "Пятница",
+    "saturday": "Суббота"
+  },
+  "weekDaysShort": {
+    "sun": "Вс",
+    "mon": "Пн",
+    "tue": "Вт",
+    "wed": "Ср",
+    "thu": "Чт",
+    "fri": "Пт",
+    "sat": "Сб"
+  },
+  "weekDaysAbbrev": {
+    "sun": "В",
+    "mon": "П",
+    "tue": "В",
+    "wed": "С",
+    "thu": "Ч",
+    "fri": "П",
+    "sat": "С"
+  }
+}

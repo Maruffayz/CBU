@@ -110,6 +110,11 @@ const Profile = () => {
                     label="English"
                   />
                   <FormControlLabel
+                    value="ru"
+                    control={<Radio />}
+                    label="Русский (ru-RU)"
+                  />
+                  <FormControlLabel
                     value="uz"
                     control={<Radio />}
                     label="O'zbek (uz-UZ)"
