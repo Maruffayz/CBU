@@ -1,24 +1,26 @@
-﻿# 🏦 CBU – Shaxsiy moliya platformasi (MyFin fork)
+﻿# 🏦 CBU – Personal Finance Platform (MyFin fork)
 
-CBU – bu [MyFin](https://github.com/aFaneca/myfin) shaxsiy moliya platformasining moslashtirilgan forki bo‘lib, foydalanuvchiga xarajatlar va daromadlarni yuritish, byudjet tuzish va statistikani ko‘rish imkonini beradi.
+CBU is a customized fork of the [MyFin](https://github.com/aFaneca/myfin) personal finance platform. 
+It helps you track income and expenses, build budgets and view useful financial statistics.
 
-Bu repozitoriyada faqat **backend API** va **web frontend** bor. Mobil ilova (Android) qismi olib tashlangan.
-
----
-
-## 📁 Tuzilma
-
-- `project` – Node.js / Express asosidagi **REST API** (MyFin API fork)
-- `web` – React + TypeScript asosidagi **web frontend** (MyFin web fork)
-
-Har bir qism o‘z README fayliga ega:
-
-- Backend bo‘yicha batafsil: `project/README.md`
-- Frontend bo‘yicha batafsil: `web/README.md`
+This repository contains only the **backend API** and the **web frontend**. 
+The Android mobile app module has been removed.
 
 ---
 
-## 🚀 Ishga tushirish (lokal development uchun qisqa ko‘rsatma)
+## 📁 Project Structure
+
+- `project` – Node.js / Express **REST API** (MyFin API fork)
+- `web` – React + TypeScript **web frontend** (MyFin web fork)
+
+Each part has its own detailed README:
+
+- Backend details: `project/README.md`
+- Frontend details: `web/README.md`
+
+---
+
+## 🚀 Quick Start (local development)
 
 ### 1. Backend (API)
 
@@ -28,11 +30,13 @@ npm install
 npm run dev
 ```
 
-Bu bosqichda sizga MySQL bazasi va tegishli muhit o‘zgaruvchilarini (`DB_NAME`, `DB_USER`, `DB_PW`, `DB_HOST`, `DB_PORT` va hokazo) to‘g‘ri sozlash kerak bo‘ladi. To‘liq ko‘rsatmalar uchun `project/README.md` faylini ko‘ring.
+You must have a running MySQL database and configure the required environment variables 
+(`DB_NAME`, `DB_USER`, `DB_PW`, `DB_HOST`, `DB_PORT`, etc.).
+For full setup instructions, see `project/README.md`.
 
 ### 2. Frontend (Web)
 
-Alohida terminal oynasida:
+In a separate terminal:
 
 ```bash
 cd web
@@ -40,37 +44,42 @@ npm install
 npm run dev
 ```
 
-Frontend `Vite` yordamida ishlaydi va backend API manzilini tegishli `VITE_MYFIN_BASE_API_URL` konfiguratsiyasi orqali oladi (Dockerda build arg sifatida, dev rejimida esa `.env` fayli orqali sozlash mumkin). Batafsil ma’lumot: `web/README.md`.
+The frontend is built with **Vite** and expects the backend API URL to be configured via
+`VITE_MYFIN_BASE_API_URL` (as a build arg in Docker, or via a `.env` file in dev mode).
+See `web/README.md` for more details.
 
 ---
 
-## 🌐 Til va tarjimalar
+## 🌐 Localization
 
-Frontend ilovada ko‘p tillilik qo‘llab-quvvatlanadi. O‘zbek tili uchun tarjimalar:
+The web app supports multiple languages.
+Uzbek translations are located at:
 
 - `web/public/locales/uz/translation.json`
 
-Ushbu fayl orqali interfeys matnlarini o‘zbek tiliga moslab tahrir qilishingiz mumkin.
+You can edit this file to adjust the UI text in Uzbek.
 
 ---
 
-## 🐳 Docker (ixtiyoriy)
+## 🐳 Docker (optional)
 
-Loyiha Docker bilan ham ishlashi mumkin (backend va frontend uchun alohida Dockerfile’lar mavjud):
+Both backend and frontend ship with Dockerfiles:
 
 - Backend Dockerfile: `project/Dockerfile`
 - Frontend Dockerfile: `web/Dockerfile`
 
-Odatda quyidagicha ishlatiladi:
+Typical flow:
 
-1. MySQL konteynerini ishga tushirish
-2. `project` uchun image build qilish va env o‘zgaruvchilarni berib ishga tushirish
-3. `web` uchun image build qilish va `VITE_MYFIN_BASE_API_URL` orqali API manzilini ko‘rsatish
+1. Start a MySQL container.
+2. Build and run the `project` image, providing the required DB-related env vars.
+3. Build the `web` image and pass `VITE_MYFIN_BASE_API_URL` pointing to the API.
 
-To‘liq konfiguratsiya va parametrlar uchun har bir papkadagi README’larni ko‘ring.
+For full configuration and all available options, check the READMEs inside each folder.
 
 ---
 
-## 📜 Litsenziya
+## 📜 License
 
-Bu loyiha asl MyFin loyihasi kabi ochiq manbali bo‘lib, litsenziya shartlari `LICENSE` faylida ko‘rsatilgan.
+This project is based on the original MyFin project and keeps the same open‑source licensing terms.
+See the `LICENSE` file for full details.
+
