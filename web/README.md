@@ -1,5 +1,3 @@
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/gpl-3.0)
-
 📟 ***The API project for this fork lives in the `project` directory of this repository.*** 📟
 
 #  🏦📈💳 MyFin - Personal Finances Platform 
