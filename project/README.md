@@ -1,10 +1,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square&logo=license)](https://www.gnu.org/licenses/gpl-3.0)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/afaneca/myfin-api?include_prereleases&style=flat-square&logo=github)](https://github.com/afaneca/myfin-api/releases)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=flat-square)](https://github.com/afaneca/myfin-api/pkgs/container/myfin-api)
 
-🖥️ ***The WEB app project is available [here](https://github.com/aFaneca/myfin/).*** 🖥️
-
-📱 ***The android mobile app project is available [here](https://github.com/aFaneca/myfin-android/).*** 📱
+🖥️ ***The web app for this fork lives in the `web` directory of this repository.*** 🖥️
 
 #  🏦📈💳 MyFin - Personal Finances Platform 
 
@@ -75,8 +71,7 @@ Here's some of the features currently in development or planned for the near fut
 This project relies on NodeJS's Express framework for its backend and there's where most of the initial setup will take place
 if you want to deploy this solution to your own server.
 
-[Here](https://github.com/afaneca/myfin-api/wiki/Getting-started) you can find the full documentation on the
-first steps to get started.
+You can find full documentation for the original MyFin API in its "Getting started" guide.
 
 # 🙋‍♂️ Contributing
 
