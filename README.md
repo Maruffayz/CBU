@@ -1,6 +1,6 @@
 ﻿# 🏦 CBU – Personal Finance Platform (MyFin fork)
 
-CBU is a customized fork of the [MyFin](https://github.com/aFaneca/myfin) personal finance platform. 
+CBU is a customized fork of the MyFin personal finance platform. 
 It helps you track income and expenses, build budgets and view useful financial statistics.
 
 This repository contains only the **backend API** and the **web frontend**. 
