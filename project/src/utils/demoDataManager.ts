@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-const { invest_transactions_type } = Prisma;
+const { invest_transactions_type } = Prisma.$Enums;
 import { performDatabaseRequest } from '../config/prisma.js';
 import { COLOR_GRADIENTS, MYFIN } from '../consts.js';
 import AccountService from '../services/accountService.js';
